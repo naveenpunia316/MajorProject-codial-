@@ -1,10 +1,13 @@
 const express = require('express');
 const port = 8000;
 const app = express();
-
+const path = require('path');
 app.use('/', require('./routes/index'));
 // index will be found automatically 
 
+app.set('view engine', 'ejs');
+app.use(express.static('./assets'));
+app.set('views', path.join(__dirname, 'views'))
 
 app.listen(port, (err) => {
     if (err) {
