@@ -3,7 +3,15 @@ const port = 8000;
 const app = express();
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
+const cookieParser = require('cookie-parser');
+const db = require('./config/mongoose');
 app.use(expressLayouts); // tell our app to use it
+
+// const bodyParser = require('body-parser');
+// app.use(bodyParser.json());
+
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
