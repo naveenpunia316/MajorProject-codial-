@@ -1,3 +1,22 @@
+<link rel="stylesheet" href="/css/header.css">
 <header>
-    Page Header
+    <nav>
+        <div id="left-nav">
+            <a href="/"><img src="/images/coding-clipart.svg" height="50px" width="90px"></a>
+        </div>
+
+        <div id="right-nav">
+            <% if(locals.user) {%>
+                <form action="/users/logout">
+                    <button>sign out</button>
+                </form>
+                <div id="user-name-div">
+                    <i class="fa fa-user"></i>
+                    <span>
+                        <%= locals.user.name %>
+                    </span>
+                </div>
+                <%}%>
+        </div>
+    </nav>
 </header>

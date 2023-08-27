@@ -10,12 +10,13 @@ module.exports.posts = (req, res) => {
     return res.end('<h1>users post</h1>')
 }
 
-module.exports.signin = (req, res) => {
-
+module.exports.createSession = (req, res) => {
+    console.log("serialised call : " + req.session.passport.user); // user id
+    return res.redirect('/');
 }
 
 
-module.exports.signup = (req, res) => {
+module.exports.createUser = (req, res) => {
     console.log(req.body)
     if (req.body.password != req.body['confirm-password'] || req.body.name == '') {
         res.redirect('back');
@@ -27,7 +28,7 @@ module.exports.signup = (req, res) => {
                 user.create(req.body)
                     .then((newUser) => {
                         console.log(`new user created ${newUser}`);
-                        res.redirect('/users/signin');
+                        res.redirect('/users/userAuth');
                         return;
                     })
                     .catch((userCreateErr) => {
@@ -35,12 +36,19 @@ module.exports.signup = (req, res) => {
                     })
                 return;
             }
-            res.redirect('/users/signup');
+            res.redirect('/users/userAuth');
             return;
         })
         .catch((err) => {
             console.log(err);
-            res.redirect('/users/signup');
+            res.redirect('/users/userAuth');
             return;
         });
+}
+
+module.exports.destroySession  = (req, res) => {
+    req.logout((err) => {
+        if(err) console.log(err);
+        return res.redirect('/');
+    });
 }

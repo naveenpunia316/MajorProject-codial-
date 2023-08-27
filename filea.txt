@@ -1,0 +1,10 @@
+
+
+
+Employee ID:a
+Employee Name     :Naveen Punia 316
+Father's Name     :Punia
+Employee Contact  :92
+Email Information :n@
+Employee position :SDE3
+Employee Salary   :2

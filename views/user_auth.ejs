@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/authPage.css">
+<section id="auth-section">
+    <div class="form-div">
+        <h2>Sign in</h2>
+        <form action="/users/createSession" method="POST">
+            <input type="email" id="email" name="email" placeholder="Enter email">
+            <input type="password" id="password" name="password" placeholder="Enter password">
+            <button>Log In</button>
+        </form>
+    </div>
+
+    <div class="form-div">
+        <h2>Sign Up</h2>
+        <form action="/users/createUser" method="POST">
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+            <input type="email" id="email" name="email" placeholder="Enter email">
+            <input type="password" id="password" name="password" placeholder="Enter password">
+            <input type="password" id="password" name="confirm-password" placeholder="Confirm above password">
+            <button>Sign up</button>
+        </form>
+    </div>
+</section>

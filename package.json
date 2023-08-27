@@ -5,16 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "scss": "node-sass --watch assets/scss -o assets/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Naveen Punia",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
-    "mongoose": "^7.3.1"
+    "express-session": "^1.17.3",
+    "mongoose": "^7.3.1",
+    "node-sass": "^9.0.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
   }
 }
